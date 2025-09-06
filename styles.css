@@ -1,0 +1,50 @@
+:root{
+  --bg:#121212;
+  --card:#181818;
+  --accent:#1DB954;
+  --text:#ffffff;
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial, sans-serif;
+}
+
+header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:16px;
+  background:linear-gradient(180deg, rgba(0,0,0,0.2), transparent);
+}
+
+.logo{
+  height:48px;
+  width:48px;
+}
+
+.container{
+  padding:20px;
+}
+
+.song-card{
+  background:var(--card);
+  border-radius:12px;
+  padding:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+button{
+  background:var(--accent);
+  border:none;
+  padding:8px 14px;
+  border-radius:999px;
+  color:#fff;
+  cursor:pointer;
+}
