@@ -6,35 +6,19 @@
   <title>Hookify Login / Signup</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Fullscreen background */
     body {
       margin: 0;
       height: 100vh;
-      font-family: Arial, sans-serif;
+      background-color: #121212;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      font-family: Arial, sans-serif;
     }
 
-    /* Background slideshow container */
-    .bg-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background-size: cover;
-      background-position: center;
-      filter: brightness(0.3); /* dark overlay */
-      transition: background-image 1s ease-in-out;
-    }
-
-    /* Login card */
     .login-card {
       background-color: #181818;
-      border-radius: 30px;
+      border-radius: 30px; /* rounded vertical ends */
       padding: 40px;
       width: 320px;
       display: flex;
@@ -66,7 +50,6 @@
       display: flex;
       gap: 10px;
       margin-bottom: 20px;
-      width: 100%;
     }
 
     .tab-buttons button {
@@ -90,7 +73,7 @@
       width: 100%;
       padding: 10px 15px;
       margin-bottom: 15px;
-      border-radius: 999px;
+      border-radius: 999px; /* circular ends */
       border: none;
       background-color: #121212;
       color: #fff;
@@ -123,7 +106,6 @@
       margin-top: 15px;
       color: #aaa;
       font-size: 14px;
-      text-align: center;
     }
 
     .signup-text a {
@@ -139,10 +121,6 @@
 </head>
 <body>
 
-  <!-- Background slideshow -->
-  <div class="bg-container"></div>
-
-  <!-- Login card -->
   <div class="login-card">
     <!-- Mini Logo -->
     <img src="assets/hookify_logo.svg" alt="Hookify Logo" class="mini-logo">
@@ -168,7 +146,6 @@
     </div>
   </div>
 
-  <!-- Scripts -->
   <script>
     // Tab switching logic
     const loginTab = document.getElementById('login-tab');
@@ -196,25 +173,6 @@
       e.preventDefault();
       alert(`${loginBtn.textContent} functionality coming soon!`);
     });
-
-    // Background slideshow
-    const images = [
-      'https://i.scdn.co/image/ab67616d0000b273f3e92b2a47c1b6f1d6b18a90',
-      'https://i.scdn.co/image/ab67616d0000b273d4f12fa3b563f4f853b0b719',
-      'https://i.scdn.co/image/ab67616d0000b273c39a9de5b6f7b6a2ff8652d1'
-      // add more album cover URLs here
-    ];
-
-    let current = 0;
-    const bgContainer = document.querySelector('.bg-container');
-
-    function changeBackground() {
-      bgContainer.style.backgroundImage = `url(${images[current]})`;
-      current = (current + 1) % images.length;
-    }
-
-    changeBackground(); // initial
-    setInterval(changeBackground, 4000); // every 4 seconds
   </script>
 
 </body>
